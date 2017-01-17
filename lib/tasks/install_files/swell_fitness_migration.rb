@@ -28,7 +28,6 @@ class SwellFitnessMigration < ActiveRecord::Migration
 			t.timestamps
 		end
 		add_index :workout_segments, [:name, :id]
-		add_index :workout_segments, :tags, using: 'gin'
 		add_index :workout_segments, [:workout_id, :position]
 
 
@@ -40,8 +39,8 @@ class SwellFitnessMigration < ActiveRecord::Migration
 			t.integer	:unit, 		default: 1
 			t.timestamps
 		end
-		add_index :workout_segment_exercies, [:workout_segment_id, :position]
-		add_index :workout_segment_exercies, [:exercise_id, :position]
+		add_index :workout_segment_exercies, [:workout_segment_id, :position], name: 'index_workout_segment_exercies_on_segment_and_position'
+		add_index :workout_segment_exercies, [:exercise_id, :position], name: 'index_workout_segment_exercies_on_exercise_and_position'
 
 
 		create_table :workouts do |t|

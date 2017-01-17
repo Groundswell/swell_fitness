@@ -1,5 +1,5 @@
 # desc "Explaining what the task does"
-namespace :swell_media do
+namespace :swell_fitness do
 	task :install do
 		puts "installing"
 
