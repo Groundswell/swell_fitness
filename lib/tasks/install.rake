@@ -22,11 +22,4 @@ namespace :swell_fitness do
 
 	end
 
-	task :import do
-
-		# seed exercises
-
-		# seed workouts
-
-	end
 end
